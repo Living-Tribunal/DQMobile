@@ -4,9 +4,10 @@ import { SafeAreaView, StyleSheet, Text, View, ImageBackground } from 'react-nat
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import ButtonTextBiggerHome from "../components/ButtonTextBiggerHome";
+import PressableHomeScreenButtonText from "../components/PressableHomeScreenButtonText";
 
 
-export default function Home() {
+export default function Home({navigation}) {
     const [fontsLoaded] = useFonts({
         'SteelworksVintageDemo': require('../assets/fonts/SteelworksVintageDemo.otf'),
     });
@@ -30,6 +31,9 @@ export default function Home() {
                 <View style={styles.topText}>
                     <ButtonTextBiggerHome value={'Destiny Quest'} />
                     <Text style={styles.button}>-Companion App-</Text>
+                    <View style={styles.heroButtonContent}>
+                    <PressableHomeScreenButtonText value="Enter, Hero!" onPress={() => navigation.navigate("Inventory")} />
+                </View>
                 </View>
             </ImageBackground>
         </SafeAreaView>
@@ -44,8 +48,11 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'SteelworksVintageDemo',
         fontSize: 55,
-        backgroundColor: 'rgba(20, 20, 20, 0.550)',
-        padding: 7
+        backgroundColor: 'rgba(20, 20, 20, 0.250)',
+        padding: 7,
+        flexDirection: 'column',
+        flex: 1,
+        justifyContent: 'center'
     },
     button: {
         fontFamily: 'monospace',
@@ -60,4 +67,7 @@ const styles = StyleSheet.create({
         top: 0,
         height: 15,
       },
+      heroButtonContent: {
+        flexDirection: 'row',
+    },
 });

@@ -1,13 +1,13 @@
-//I found this on geekforgeeks and just modified it. 
-
-
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 interface DiceState {
     randomNumber: number | null;
     randomHeroNumber: number | null;
     totalDice: number | null;
+    totalSpeed: number | null;
+    initialSpeed: number | null;
 }
   
 
@@ -18,8 +18,26 @@ class Dice extends React.Component<{}, DiceState> {
         randomNumber: 0,
         randomHeroNumber: 0,
         totalDice: 0,
+        totalSpeed: null,
+        initialSpeed: null,
       };
-    };
+    }
+
+    componentDidMount() {
+        this.retrieveSpeed();
+    }
+
+    retrieveSpeed = async () => {
+        try {
+          const speedValue = await AsyncStorage.getItem('Speed');
+          if (speedValue !== null) {
+            const initialSpeed = parseInt(speedValue, 10);
+            this.setState({ totalSpeed: initialSpeed, initialSpeed });
+          }
+        } catch (error) {
+            console.error('Error retrieving speed value:', error);
+        }
+      };
 
   generateRandomNumber = () => {
     const min = 1;
@@ -27,7 +45,9 @@ class Dice extends React.Component<{}, DiceState> {
     const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     const randomHeroNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     const totalDice = randomNumber + randomHeroNumber;
-    this.setState({ randomNumber, randomHeroNumber, totalDice });
+    let totalSpeed = this.state.totalSpeed || 0;
+    if (this.state.initialSpeed !== null) {totalSpeed = this.state.initialSpeed + totalDice;}
+    this.setState({ randomNumber, randomHeroNumber, totalDice, totalSpeed });
   };
 
   render() {
@@ -39,6 +59,7 @@ class Dice extends React.Component<{}, DiceState> {
         <Text style={styles.randomNumber}>First Dice: {this.state.randomHeroNumber}</Text>
         <Text style={styles.randomNumber}>Second Dice: {this.state.randomNumber}</Text>
         <Text style={styles.randomNumber}>Total: {this.state.totalDice}</Text>
+        <Text style={styles.randomNumber}>Total + Speed: {this.state.totalSpeed}</Text>
       </View>
     );
   }

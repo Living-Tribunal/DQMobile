@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar';
-
 import {
     SafeAreaView,
     StyleSheet,
@@ -10,14 +9,16 @@ import {
 } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import PressableInventoryAction from '../components/PressableInventoryAction';
 import ButtonText from '../components/ButtonText';
-import ClickButtonText  from '../components/HeaderText';
+import ClickButtonText from '../components/HeaderText';
 import Dice from '../components/Dice'
+import OpponentDice from '../components/OpponentDice'
 import PressableStatButton from '../components/PressableStatButton';
 import PressableCombatTrackHeroPassive from "../components/PressableCombatTrackHeroPassive";
 import PressableButtonText from '../components/PressableButtonText';
 
-export default function CombatTracker() {
+export default function CombatTracker({ navigation }) {
     const [fontsLoaded] = useFonts({
         'SteelworksVintageDemo': require("../assets/fonts/SteelworksVintageDemo.otf"),
     });
@@ -36,10 +37,35 @@ export default function CombatTracker() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <StatusBar hidden/>
+            <StatusBar hidden />
             <ScrollView style={styles.scrollView}>
-            <ImageBackground imageStyle={{ opacity: 0.3, resizeMode: 'repeat', }} source={require("../assets/images/texture.jpg")}>
+                <ImageBackground imageStyle={{ opacity: 0.2, resizeMode: 'repeat', }} source={require("../assets/images/texture.jpg")}>
+                    <View style={styles.heroSheetContainer}>
+                    </View>
                     <View>
+                        <View>
+                            <View style={styles.menuContainer}>
+                                <View style={styles.menuItem}>
+                                    <PressableInventoryAction value="Inventory" onPress={() => navigation.navigate("Inventory")} />
+
+                                </View>
+                                <View style={styles.menuItem}>
+                                    <PressableInventoryAction value="Special Abilities" onPress={() => navigation.navigate("Special Abilities")} />
+
+                                </View>
+                            </View>
+                            <View style={styles.menuContainer}>
+                                <View style={styles.menuItem}>
+                                    <PressableInventoryAction value="Notes" onPress={() => navigation.navigate("Notes")} />
+                                </View>
+                                <View style={styles.menuItem}>
+                                    <PressableInventoryAction value="Maps" onPress={() => navigation.navigate("Maps")} />
+                                </View>
+                                <View style={styles.menuItem}>
+                                    <PressableInventoryAction value="Home" onPress={() => navigation.navigate("Home")} />
+                                </View>
+                            </View>
+                        </View>
                         <View style={styles.combatContainer}>
                             <View>
                                 <ButtonText value={'-Your Hero-'} />
@@ -67,21 +93,21 @@ export default function CombatTracker() {
                             </View>
                             <View>
                                 <PressableButtonText statKey={'Opponent Passive1'} value={'Passive 1'} />
-                                <PressableButtonText statKey={'Opponent Passive2'} value={'Passive 2'}/>
-                                <PressableButtonText statKey={'Opponent Passive3'} value={'Passive 3'}/>
+                                <PressableButtonText statKey={'Opponent Passive2'} value={'Passive 2'} />
+                                <PressableButtonText statKey={'Opponent Passive3'} value={'Passive 3'} />
                             </View>
                             <View>
                                 <ButtonText value='Dice Roller (2D6)' />
-                            <View style={styles.buttonContainer}>
-                                <View style={styles.buttonGroup}>
-                                    <ClickButtonText value={'-Hero Dice-'} />
-                                    <Dice />
+                                <View style={styles.buttonContainer}>
+                                    <View style={styles.buttonGroup}>
+                                        <ClickButtonText value={'-Hero Dice-'} />
+                                        <Dice />
+                                    </View>
+                                    <View style={styles.buttonGroup}>
+                                        <ClickButtonText value={'-Opponent Dice-'} />
+                                        <OpponentDice />
+                                    </View>
                                 </View>
-                                <View style={styles.buttonGroup}>
-                                    <ClickButtonText value={'-Opponent Dice-'} />
-                                    <Dice />
-                                </View>
-                            </View>
                             </View>
                         </View>
                     </View>
@@ -110,8 +136,9 @@ const styles = StyleSheet.create({
     menuContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginHorizontal: 10,
         flex: 1,
+        backgroundColor: 'gold',
+        padding: 5
     },
     menuItem: {
         flex: 1,
@@ -121,10 +148,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         flexDirection: 'column',
+        padding: 10
     },
     statsContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
+        paddingTop: 20
     },
     buttonContainer: {
         flexDirection: 'row',

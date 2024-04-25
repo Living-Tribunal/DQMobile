@@ -87,7 +87,7 @@ function PressableButtonText({ value, statKey, data }: PressableButtonTextProps)
                                     backgroundColor: pressed ? "#ff0000" : "rgb(20, 20, 20)",
                                 },
                             ]}
-                            onLongPress={() => { setSelectedDropDown(""), save() }}>
+                            onLongPress={() => { setSelectedDropDown(""), setIsModalVisible(false), save() }}>
                             <Text style={styles.modalButton}>Delete</Text>
                         </Pressable>
                     </View>

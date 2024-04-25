@@ -89,11 +89,11 @@ export default function PressableButtonText({ value, statKey }: PressableButtonT
                                 styles.button,
                                 {
                                     backgroundColor: pressed
-                                        ? "#ff0000"
+                                        ? "#931e1e"
                                         : "rgb(20, 20, 20)",
                                 },
                             ]}
-                            onLongPress={() => {setText(""), save() }}>
+                            onLongPress={() => {setText(""), setIsModalVisible(false), save() }}>
                             <Text style={styles.modalButton}>Delete</Text>
                         </Pressable>
                     </View>
@@ -103,7 +103,7 @@ export default function PressableButtonText({ value, statKey }: PressableButtonT
                                 styles.button,
                                 {
                                     backgroundColor: pressed
-                                        ? "#2600ff"
+                                        ? "#1e6c93"
                                         : "rgb(20, 20, 20)",
                                 },
                             ]}

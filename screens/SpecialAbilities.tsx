@@ -10,6 +10,8 @@ import {
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import ButtonText from "../components/ButtonText";
+import PressableInventoryAction from "../components/PressableInventoryAction";
+import ButtonTextBigger from "../components/ButtonTextBigger";
 import Passive from "../constants/passive/Passive";
 import PressableButtonInventory from "../components/PressableButtonInventory";
 
@@ -33,10 +35,29 @@ export default function SpecialAbilities({ navigation }) {
 
     return (
         <SafeAreaView style={styles.container}>
-            <StatusBar hidden/>
+            <StatusBar hidden />
             <ScrollView style={styles.scrollView}>
-                <ImageBackground imageStyle={{ opacity: 0.3, resizeMode: 'repeat', }} source={require("../assets/images/texture.jpg")}>
-                    <View style={styles.heroSheetContainer}>
+                <ImageBackground imageStyle={{ opacity: 0.2, resizeMode: 'repeat', }} source={require("../assets/images/texture.jpg")}>
+                    <View>
+                        <View style={styles.menuContainer}>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Inventory" onPress={() => navigation.navigate("Inventory")} />
+                            </View>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Combat Tracker" onPress={() => navigation.navigate("Combat Tracker")} />
+                            </View>
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Maps" onPress={() => navigation.navigate("Maps")} />
+                            </View>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Notes" onPress={() => navigation.navigate("Notes")} />
+                            </View>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Home" onPress={() => navigation.navigate("Home")} />
+                            </View>
+                        </View>
                     </View>
                     <ButtonText value={'-Speed (sp)-'} />
                     <View>
@@ -64,7 +85,7 @@ export default function SpecialAbilities({ navigation }) {
                         <PressableButtonInventory statKey={'Passive Mod 4'} value={'Passive Mod 4'} data={Passive} />
                         <PressableButtonInventory statKey={'Passive Mod 5'} value={'Passive Mod 5'} data={Passive} />
                         <PressableButtonInventory statKey={'Passive Mod 6'} value={'Passive Mod 6'} data={Passive} />
-                        
+
                     </View>
                     <ButtonText value={'-Modifier (mo)-'} />
                     <View >
@@ -121,9 +142,9 @@ const styles = StyleSheet.create({
     menuContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginHorizontal: 10,
         flex: 1,
-        alignContent: 'center'
+        backgroundColor: 'gold',
+        padding: 5
     },
     modalTextInput: {
         backgroundColor: 'white',
@@ -153,6 +174,7 @@ const styles = StyleSheet.create({
     },
     backpackContainer: {
         flex: 1,
+        padding: 8,
         flexDirection: 'row',
         justifyContent: 'space-around',
     },

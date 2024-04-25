@@ -17,7 +17,7 @@ export default function ResetHeroButton({ value }: ResetHeroButtonProp) {
                 style={({ pressed }) => [
                     styles.button,
                     {
-                        backgroundColor: pressed ? "#ff0000" : "transparent",
+                        backgroundColor: pressed ? "#931e1e" : "transparent",
                     },
                 ]}
                 onPress={() => setIsModalVisible(true)}>
@@ -38,14 +38,7 @@ export default function ResetHeroButton({ value }: ResetHeroButtonProp) {
                                 backgroundColor: pressed ? "#ff0000" : "transparent",
                             },
                         ]}
-                        onLongPress={async () => {
-                            try {
-                                await ResetHero();
-                                setIsModalVisible(false);
-                            } catch (error) {
-                                console.error("Error resetting hero:", error);
-                            }
-                        }}>
+                        onLongPress={() => {ResetHero(), setIsModalVisible(false) }}>
                         <Text style={styles.modalButton}>Reset Hero</Text>
                     </Pressable>
                 </View>

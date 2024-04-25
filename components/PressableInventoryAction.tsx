@@ -15,7 +15,7 @@ export default function PressableInventoryAction({value, onPress}: PressableInve
             style={({ pressed }) => [
                 styles.button,
                 {
-                    backgroundColor: pressed ? "gold" : "rgb(255, 255, 255)",
+                    backgroundColor: pressed ? "#1e6c93" : "rgb(20, 20, 20)",
                 },
             ]}
             onPress={onPress}>
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         justifyContent: "center",
         alignItems: 'center',
-        borderRadius: 5
+        borderRadius: 2
     },
     menuText: {
         flex: 1,

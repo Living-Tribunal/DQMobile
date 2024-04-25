@@ -11,6 +11,8 @@ import {
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import PressableButtonText from "../components/PressableButtonText";
+import PressableInventoryAction from "../components/PressableInventoryAction";
+import ButtonTextBigger from "../components/ButtonTextBigger";
 import ClickButtonText from "../components/HeaderText";
 
 
@@ -34,16 +36,30 @@ export default function Inventory({ navigation }) {
 
     return (
         <SafeAreaView style={styles.container}>
-            <StatusBar hidden/>
+            <StatusBar hidden />
             <ScrollView style={styles.scrollView}>
-                <ImageBackground imageStyle={{ opacity: 0.3, resizeMode: 'repeat', }} source={require("../assets/images/texture.jpg")}>
-                    <View style={styles.heroSheetContainer}>
-                    </View>
+                <ImageBackground imageStyle={{ opacity: 0.2, resizeMode: 'repeat', }} source={require("../assets/images/texture.jpg")}>
+
                     <View>
-                    </View>
-                    <View>
-                        <ClickButtonText value={'Where did you leave off?'} />
-                        <PressableButtonText value={'Section #'} statKey={"Section"} />
+                        <View style={styles.menuContainer}>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Inventory" onPress={() => navigation.navigate("Inventory")} />
+                            </View>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Special Abilities" onPress={() => navigation.navigate("Special Abilities")} />
+                            </View>
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Combat Tracker" onPress={() => navigation.navigate("Combat Tracker")} />
+                            </View>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Maps" onPress={() => navigation.navigate("Maps")} />
+                            </View>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Home" onPress={() => navigation.navigate("Home")} />
+                            </View>
+                        </View>
                     </View>
                     <View>
                         <ClickButtonText value={'Figured it might be helpful if you could take some notes as you adventure!'} />
@@ -93,6 +109,11 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: "black",
     },
+    statsContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        paddingTop: 20
+    },
     menuItem: {
         flex: 1,
         marginHorizontal: 5,
@@ -109,8 +130,9 @@ const styles = StyleSheet.create({
     menuContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginHorizontal: 10,
         flex: 1,
+        backgroundColor: 'gold',
+        padding: 5
     },
     modalTextInput: {
         backgroundColor: 'white',
@@ -137,5 +159,11 @@ const styles = StyleSheet.create({
     scrollView: {
         marginHorizontal: 1,
         backgroundColor: 'black'
+    },
+    backpackContainer: {
+        flex: 1,
+        padding: 8,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
     },
 });

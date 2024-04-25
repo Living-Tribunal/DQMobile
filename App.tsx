@@ -1,24 +1,26 @@
 
-// import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import React, { useEffect } from 'react';
-import { StyleSheet, View, SafeAreaView} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
+import * as SplashScreen from 'expo-splash-screen'
 import { NavigationContainer } from '@react-navigation/native';
 import Inventory from './screens/Inventory';
 import SpecialAbilities from './screens/SpecialAbilities';
 import Home from './screens/Home';
 import Notes from './screens/Notes';
 import Maps from './screens/Maps';
-// import { CardStyleInterpolators } from '@react-navigation/stack';
+//import { CardStyleInterpolators } from '@react-navigation/stack';
 import CombatTracker from './screens/CombatTracker';
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
-// import ButtonTextBigger from './components/ButtonTextBiggerHome';
-import ResetHeroButtonPage from './screens/ResetHeroButtonPage';
+//import { createDrawerNavigator } from '@react-navigation/drawer';
 
-const Drawer = createDrawerNavigator();
+SplashScreen.preventAutoHideAsync();
 
-function MyStack() {
+//drawer was messing with my asyncstorage and i dont know why. i went back to stack.
+
+/* const Drawer = createDrawerNavigator();
+
+function MyDrawer() {
     
     return (
         <Drawer.Navigator initialRouteName='Home' 
@@ -57,9 +59,38 @@ function MyStack() {
             <Drawer.Screen name="Combat Tracker" component={CombatTracker} />
             <Drawer.Screen name="Maps" component={Maps} />
             <Drawer.Screen name="Notes" component={Notes} />
-            <Drawer.Screen name="Reset Hero" component={ResetHeroButtonPage} />
         </Drawer.Navigator>
   
+    );
+} */
+
+
+const Stack = createStackNavigator();
+
+function MyStack() {
+    return (
+        <Stack.Navigator
+            initialRouteName='Home' 
+            screenOptions={{gestureEnabled:true, 
+                gestureDirection: 'horizontal',
+                headerStyle: {
+                    backgroundColor: 'gold',
+                  },
+                  headerTitleAlign: 'center',
+                  headerTintColor: '#141414',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                    fontFamily: 'monospace',
+                    justifyContent: 'center'
+                  },}} 
+        >
+            <Stack.Screen name="Inventory" component={Inventory} />
+            <Stack.Screen name="Special Abilities" component={SpecialAbilities} />
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Notes" component={Notes} />
+            <Stack.Screen name="Combat Tracker" component={CombatTracker} />
+            <Stack.Screen name="Maps" component={Maps} />
+        </Stack.Navigator>
     );
 }
 

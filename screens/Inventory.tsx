@@ -11,7 +11,9 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import ButtonText from "../components/ButtonText";
 import PressableButtonText from "../components/PressableButtonText";
+import PressableInventoryAction from "../components/PressableInventoryAction";
 import PressableStatButton from "../components/PressableStatButton";
+import ButtonTextBigger from "../components/ButtonTextBigger";
 import PressableButtonInventory from "../components/PressableButtonInventory"
 import GenerateRandomName from "../components/GenerateRandomName";
 import Cloak from "../constants/gear/Cloak";
@@ -26,8 +28,10 @@ import MainHand from "../constants/gear/MainHand";
 import Rings from "../constants/gear/Rings";
 import HeroPath from "../components/HeroPath";
 import HeroCareer from "../components/HeroCareer";
+import PressableCrownsButton from "../components/PressableCrownsButton";
+import PressableHealthButton from "../components/PressableHealthButton"
 
-export default function Inventory() {
+export default function Inventory({ navigation }) {
 
     const [fontsLoaded] = useFonts({
         'SteelworksVintageDemo': require("../assets/fonts/SteelworksVintageDemo.otf"),
@@ -49,10 +53,29 @@ export default function Inventory() {
         <SafeAreaView style={styles.container}>
             <StatusBar  hidden/>
             <ScrollView style={styles.scrollView}>
-                <ImageBackground imageStyle={{ opacity: 0.3, resizeMode: 'repeat'}} source={require("../assets/images/texture.jpg")}>
-                    <View style={styles.heroSheetContainer}>
-                        <ButtonText value={'Name'} />
+                <ImageBackground imageStyle={{ opacity: 0.2, resizeMode: 'repeat'}} source={require("../assets/images/texture.jpg")}>
+                    <View>
+                        <View style={styles.menuContainer}>
+                            <View style={styles.menuItem}> 
+                            <PressableInventoryAction value="Special Abilities" onPress={() => navigation.navigate("Special Abilities")} />
+                            </View>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Combat Tracker" onPress={() => navigation.navigate("Combat Tracker")} />
+                            </View>
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Notes" onPress={() => navigation.navigate("Notes")} />
+                            </View>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Maps" onPress={() => navigation.navigate("Maps")} />
+                            </View>
+                            <View style={styles.menuItem}>
+                                <PressableInventoryAction value="Home" onPress={() => navigation.navigate("Home")} />
+                            </View>
+                        </View>
                     </View>
+                    <ButtonText value={'-Hero-'} />
                     <View style={styles.randomName}>
                         <GenerateRandomName statKey={'Name'} value={'Name'} />
                     </View>
@@ -88,19 +111,17 @@ export default function Inventory() {
                     </View>
                     <View style={styles.statsContainer}>    
                         <PressableStatButton value={'Armor'} statKey={"Armor"} />
-                        <PressableStatButton value={'Health'} statKey={"Health"} />
-                        <PressableStatButton value={'Crowns'} statKey={"Money Pouch"} />
+                        <PressableHealthButton value={'Health'} statKey={"Health"} />
+                        <PressableCrownsButton value={'Crowns'} statKey={"Money Pouch"} />
                     </View>
                     <ButtonText value={'-Backpack-'} />
                     <View style={styles.backpackContainer} >
                         <PressableButtonText statKey={'Item 1'} value={'Item 1'} />
                         <PressableButtonText statKey={'Item 2'} value={'Item 2'} />
-                        <PressableButtonText statKey={'Item 3'} value={'Item 3'} />
                     </View>
                     <View style={styles.backpackContainer} >
+                        <PressableButtonText statKey={'Item 3'} value={'Item 3'} />
                         <PressableButtonText statKey={'Item 4'} value={'Item 4'} />
-                        <PressableButtonText statKey={'Item 5'} value={'Item 5'} />
-                        <PressableButtonText statKey={'Item 6'} value={'Item 6'} />
                     </View>
                 </ImageBackground>
             </ScrollView>
@@ -131,6 +152,7 @@ const styles = StyleSheet.create({
     statsContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
+        paddingTop: 20
     },
     menuItem: {
         flex: 1,
@@ -147,8 +169,10 @@ const styles = StyleSheet.create({
     },
     menuContainer: {
         flexDirection: 'row',
-        marginHorizontal: 10,
+        justifyContent: 'space-between',
         flex: 1,
+        backgroundColor: 'gold',
+        padding: 5
     },
     modalTextInput: {
         backgroundColor: 'white',
@@ -177,7 +201,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'black'
     },
     backpackContainer: {
-        margin: 8,
+        flex: 1,
+        padding: 8,
         flexDirection: 'row',
         justifyContent: 'space-around',
         

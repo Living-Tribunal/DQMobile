@@ -15,8 +15,11 @@ const styles = StyleSheet.create({
     topText: {
         color: 'gold',
         fontFamily: "SteelworksVintageDemo",
-        fontSize: 20,
+        fontSize: 29,
         textAlign: "center",
+        marginTop: 10,
+        paddingBottom: 10,
+        paddingTop: 10,
         padding: 10
     }, 
 });

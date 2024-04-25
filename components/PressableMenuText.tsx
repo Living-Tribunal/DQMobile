@@ -15,11 +15,11 @@ export default PressableMenuText;
 const styles = StyleSheet.create({
     menuText: {
         fontFamily: 'monospace',
-        color: '#000000',
+        color: '#ffffff',
         padding: 7,
         fontWeight: 'bold',
         textAlign: 'center',
-        fontSize: 10,
+        fontSize: 8,
     },
 });
 

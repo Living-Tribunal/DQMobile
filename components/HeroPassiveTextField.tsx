@@ -6,6 +6,7 @@ interface HeroPassiveTextFieldProp {
     statKey: string,
 }
 
+
 function HeroPassiveTextField({ statKey }: HeroPassiveTextFieldProp) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [selectedDropDown, setSelectedDropDown] = useState('');
@@ -51,6 +52,7 @@ function HeroPassiveTextField({ statKey }: HeroPassiveTextFieldProp) {
                                     },
                                 ]}
                                 onPress={() => {
+                                    setIsModalVisible(false);
                                     save();
                                 }}>
                                 <Text style={styles.modalButton}>Close</Text>

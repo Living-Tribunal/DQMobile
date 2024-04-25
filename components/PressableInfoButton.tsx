@@ -1,5 +1,5 @@
 import React, { useState, } from "react";
-import { StyleSheet, Pressable, View, Modal, Text, ScrollView, StatusBar } from "react-native";
+import { StyleSheet, Pressable, View, Modal, Text, ScrollView } from "react-native";
 import ClickButtonText from "./HeaderText";
 import ButtonInfoText from "./ButtonInfoText";
 import HeaderText from "./HeaderText";
@@ -23,14 +23,14 @@ export default function PressableStatButton({ value }: PressableStatButtonProp) 
                 onPress={() => setIsModalVisible(true)}>
                 <ClickButtonText value={value} />
             </Pressable>
+        
             <Modal
                 transparent={true}
                 visible={isModalVisible}
                 onRequestClose={() => setIsModalVisible(false)}
                 animationType="slide">
-                <ScrollView contentContainerStyle={styles.scrollViewContent}>    
+                <ScrollView>    
                 <View style={styles.heroModalContainer}>
-                    <StatusBar hidden={true} />
                     <Text style={styles.textStyle}>Welcome to the <ButtonInfoText value={'Destiny Quest'}/> Hero Sheet Companion App!</Text>
                     <ButtonInfoText value={'Manage Your Adventure:'} /> 
                     <HeaderText value={'Keep track of your heros stats, inventory, and quest progress as you journey through the sprawling lands of Valeron.'}/>
@@ -63,16 +63,18 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     heroModalContainer: {
-        flex: 1,
+        flexDirection: 'column',
         backgroundColor: 'rgb(20, 20, 20)',
         alignItems: 'center',
         justifyContent: 'center',
+        padding: 20
     },
     textStyle: {
         color: '#ffffff',
-        fontSize: 25,
+        fontSize: 50,
         fontFamily: 'monospace',
         textAlign: 'center',
+        padding: 10
     },
     modalButton: {
         color: 'white',
@@ -80,11 +82,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 20,
         padding: 10,
-    },
-    scrollViewContent: {
-        flexGrow: 1,
-        justifyContent: 'center',
-    },
+        borderWidth: 1,
+        borderColor: 'white'
+    }
 });
 
 

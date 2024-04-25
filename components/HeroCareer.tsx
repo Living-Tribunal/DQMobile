@@ -96,7 +96,7 @@ export default function PressableButtonText({ value, statKey }: PressableButtonT
                                 },
                             ]}
 
-                            onLongPress={() => {setSelectedHeroCareer(""), save() }}>
+                            onLongPress={() => {setSelectedHeroCareer(""), setIsModalVisible(false), save() }}>
                         
                             <Text style={styles.modalButton}>Delete</Text>
                         </Pressable>

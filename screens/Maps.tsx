@@ -11,7 +11,9 @@ import {
 } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import ClickButtonText  from '../components/HeaderText';
+import PressableInventoryAction from "../components/PressableInventoryAction";
+import ButtonTextBigger from "../components/ButtonTextBigger";
+import ClickButtonText from '../components/HeaderText';
 
 export default function Inventory({ navigation }) {
     const bone = require("../assets/images/bone.jpg")
@@ -67,60 +69,64 @@ export default function Inventory({ navigation }) {
         SplashScreen.hideAsync();
     };
 
-    return(
+    return (
         <SafeAreaView style={styles.container}>
-            <StatusBar hidden/>
+            <StatusBar hidden />
             <ScrollView style={styles.scrollView}>
-            <ImageBackground
+                <ImageBackground
                     style={styles.backgroundImage}
-                    imageStyle={{ opacity: 0.3, resizeMode: 'repeat' }}
-                    source={require("../assets/images/texture.jpg")}>            
-                <View>
-                <View style={styles.heroSheetContainer}>
+                    imageStyle={{ opacity: 0.2, resizeMode: 'repeat' }}
+                    source={require("../assets/images/texture.jpg")}>
+                    <View>
+                        <View>
+                            <View style={styles.menuContainer}>
+                                <View style={styles.menuItem}>
+                                    <PressableInventoryAction value="Inventory" onPress={() => navigation.navigate("Inventory")} />
+                                </View>
+                                <View style={styles.menuItem}>
+                                    <PressableInventoryAction value="Special Abilities" onPress={() => navigation.navigate("Special Abilities")} />
+                                </View>
+                            </View>
+                            <View style={styles.menuContainer}>
+                                <View style={styles.menuItem}>
+                                    <PressableInventoryAction value="Combat Tracker" onPress={() => navigation.navigate("Combat Tracker")} />
+                                </View>
+                                <View style={styles.menuItem}>
+                                    <PressableInventoryAction value="Notes" onPress={() => navigation.navigate("Notes")} />
+                                </View>
+                                <View style={styles.menuItem}>
+                                    <PressableInventoryAction value="Home" onPress={() => navigation.navigate("Home")} />
+                                </View>
+                            </View>
+                        </View>
                     </View>
-            </View>
-            <ClickButtonText value="Here are the maps and legend from the center of the book." />
-            <ClickButtonText value="Hold your finger on an image to see the legend." />
-                <View style={styles.imagesContainer}>
-                    <Pressable
+                    <ClickButtonText value="Here are the maps and legend from the center of the book." />
+                    <ClickButtonText value="Hold your finger on an image to see the legend." />
+                    <View style={styles.imagesContainer}>
+                        <Pressable
                             onLongPress={handleImageTitheChangeIn}
                             onPressOut={handleImageTitheChangeOut}
-                            style={({ pressed }) => [
-                                styles.button,
-                                {
-                                    backgroundColor: pressed ? "gold" : "rgb(20, 20, 20)",
-                                },
-                            ]}>
-                        <Image source={imageTitheAsset} />  
-                    </Pressable>
-                    <Pressable
+                            style={styles.button}>
+                            <Image source={imageTitheAsset} />
+                        </Pressable>
+                        <Pressable
                             onLongPress={handleImageMistChangeIn}
                             onPressOut={handleImageMistChangeOut}
-                            style={({ pressed }) => [
-                                styles.button,
-                                {
-                                    backgroundColor: pressed ? "gold" : "rgb(255, 0, 0)",
-                                },
-                            ]}>
-                        <Image source={imageMistAsset} />  
-                    </Pressable>
-                    <Pressable
+                            style={styles.button}>
+                            <Image source={imageMistAsset} />
+                        </Pressable>
+                        <Pressable
                             onLongPress={handleImageBoneChangeIn}
                             onPressOut={handleImageBoneChangeOut}
-                            style={({ pressed }) => [
-                                styles.button,
-                                {
-                                    backgroundColor: pressed ? "gold" : "rgb(255, 0, 0)",
-                                },
-                            ]}>
-                        <Image source={imageBoneAsset} />  
-                    </Pressable>
+                            style={styles.button}>
+                            <Image source={imageBoneAsset} />
+                        </Pressable>
 
                     </View>
-            </ImageBackground>        
+                </ImageBackground>
             </ScrollView>
         </SafeAreaView>
-);
+    );
 
 }
 
@@ -145,8 +151,9 @@ const styles = StyleSheet.create({
     menuContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginHorizontal: 10,
-        backgroundColor: 'transparent',
+        flex: 1,
+        backgroundColor: 'gold',
+        padding: 5
     },
     button: {
         justifyContent: "center",

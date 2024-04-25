@@ -35,6 +35,7 @@ export default function PressableCombatTrackHeroPassive({ }) {
                     <HeroPassiveTextField statKey={'Speed Mod 5'} />
                     <HeroPassiveTextField statKey={'Speed Mod 6'} />
 
+
                     <ButtonText value={'-Combat (co)-'} />
                     <HeroPassiveTextField statKey={'Combat Mod 1'} />
                     <HeroPassiveTextField statKey={'Combat Mod 2'} />
@@ -58,7 +59,8 @@ export default function PressableCombatTrackHeroPassive({ }) {
                     <HeroPassiveTextField statKey={'Mod4'} />
                     <HeroPassiveTextField statKey={'Mod5'} />
                     <HeroPassiveTextField statKey={'Mod6'} />
-                    
+
+
                     <Pressable
                         style={({ pressed }) => [
                             styles.button,

@@ -1,12 +1,12 @@
 interface PathItems {
-    key: number;
+    key: string;
     value: string;
 }
 
 const Path: PathItems[] =[
-    {key: 1, value: "Warrior"},
-    {key: 2, value: "Mage"},
-    {key: 3, value: "Rogue"}
+    {key: "1", value: "Warrior"},
+    {key: "2", value: "Mage"},
+    {key: "3", value: "Rogue"}
 ];
 
 export default Path;

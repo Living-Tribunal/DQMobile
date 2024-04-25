@@ -19,5 +19,5 @@ const styles = StyleSheet.create({
         fontFamily: "SteelworksVintageDemo",
         fontSize: 35,
         textAlign: "center",
-    }
+    } as TextStyle,
 });
