@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'SteelworksVintageDemo',
         fontSize: 55,
-        backgroundColor: 'rgba(20, 20, 20, 0.250)',
+        backgroundColor: 'rgba(20, 20, 20, 0.4)',
         padding: 7,
         flexDirection: 'column',
         flex: 1,
