@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Destiny Quest Mobile",
+    "slug": "destiny-quest-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/images/splash.jpg",
+      "resizeMode": "contain",
+      "backgroundColor": "#141414"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/splash.jpg",
+        "backgroundColor": "#141414"
+      },
+      "package": "com.happybob59.destinyquestmobile"
+    },
+    "web": {
+      "favicon": "./assets/images/logo.jpg"
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "241a40d3-88c3-4fb7-8981-6d8ffc1baa48"
+      }
+    }
+  }
+}
