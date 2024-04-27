@@ -13,7 +13,14 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import PressableInventoryAction from "../components/PressableInventoryAction";
 import ClickButtonText from '../components/HeaderText';
-import QuestComplete from "../components/QuestComplete";
+import QuestEasy from "../components/QuestEasy";
+import QuestAverage from "../components/QuestAverage";
+import QuestHard from "../components/QuestHard";
+import QuestHardest from "../components/QuestHardest";
+import QuestBoss from "../components/QuestBoss";
+import QuestLegendary from "../components/QuestLegendary";
+
+
 
 export default function Maps({ navigation }) {
     const bone = require("../assets/images/bone.jpg")
@@ -113,10 +120,18 @@ export default function Maps({ navigation }) {
                             <ClickButtonText value="Tithebury: Quest Completion Tracker" />
                         </View>
                         <View style={styles.comp}>
-                            <QuestComplete statKey="15" value="15" />
-                            <QuestComplete statKey="16" value="16" />
-                            <QuestComplete statKey="17" value="17" />
-                            <QuestComplete statKey="18" value="18" />
+                            <QuestEasy statKey="10" value="10"/>
+                            <QuestEasy statKey="15" value="15"/>
+                            <QuestEasy statKey="22" value="22"/>
+                            <QuestAverage statKey="4" value="4"/>
+                            <QuestAverage statKey="66" value="66"/>
+                            <QuestHard statKey="25" value="25"/>
+                            <QuestHard statKey="111" value="111"/>
+                            <QuestHardest statKey="87" value="87"/>
+                            <QuestBoss statKey="97" value="97"/>
+                            <QuestLegendary statKey="18" value="18"/>
+                            <QuestLegendary statKey="29" value="29"/>
+                            <QuestLegendary statKey="49" value="49"/>
                         </View>
                         <Pressable
                             onLongPress={handleImageMistChangeIn}
@@ -186,4 +201,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row"
     },
+    questComplete15: {
+        backgroundColor: 'blue'
+    }
 });
