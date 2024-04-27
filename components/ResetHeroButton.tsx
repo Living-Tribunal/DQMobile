@@ -17,7 +17,7 @@ export default function ResetHeroButton({ value }: ResetHeroButtonProp) {
                 style={({ pressed }) => [
                     styles.button,
                     {
-                        backgroundColor: pressed ? "#931e1e" : "transparent",
+                        backgroundColor: pressed ? "red" : "transparent",
                     },
                 ]}
                 onPress={() => setIsModalVisible(true)}>
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     button: {
         borderWidth: 1,
         borderColor: 'white',
-        borderRadius: 1,
+        borderRadius: 5,
         marginTop: 10
     },
     heroModalContainer: {

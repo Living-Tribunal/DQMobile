@@ -5,6 +5,7 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import ButtonTextBiggerHome from "../components/ButtonTextBiggerHome";
 import PressableHomeScreenButtonText from "../components/PressableHomeScreenButtonText";
+import ResetHeroButton from '../components/ResetHeroButton';
 
 
 export default function Home({navigation}) {
@@ -28,13 +29,16 @@ export default function Home({navigation}) {
         <SafeAreaView style={styles.container}>
             <StatusBar hidden />
             <ImageBackground source={require("../assets/images/background2.jpg")} style={styles.container}>
-                <View style={styles.topText}>
+            <View style={styles.topText}>
                     <ButtonTextBiggerHome value={'Destiny Quest'} />
                     <Text style={styles.button}>-Companion App-</Text>
-                    <View style={styles.heroButtonContent}>
+                <View style={styles.heroButtonContent}>
                     <PressableHomeScreenButtonText value="Enter, Hero!" onPress={() => navigation.navigate("Inventory")} />
                 </View>
+                <View style={styles.heroResetContent}>
+                    <ResetHeroButton value="Reset Hero" />
                 </View>
+            </View>
             </ImageBackground>
         </SafeAreaView>
     );
@@ -70,4 +74,11 @@ const styles = StyleSheet.create({
       heroButtonContent: {
         flexDirection: 'row',
     },
+    heroResetContent:{
+        width: 150,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        marginLeft: 110
+    }
 });

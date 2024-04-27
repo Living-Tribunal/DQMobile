@@ -12,10 +12,10 @@ import {
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import PressableInventoryAction from "../components/PressableInventoryAction";
-import ButtonTextBigger from "../components/ButtonTextBigger";
 import ClickButtonText from '../components/HeaderText';
+import QuestComplete from "../components/QuestComplete";
 
-export default function Inventory({ navigation }) {
+export default function Maps({ navigation }) {
     const bone = require("../assets/images/bone.jpg")
     const mist = require("../assets/images/mist.jpg")
     const tithe = require("../assets/images/tithe.jpg")
@@ -102,13 +102,22 @@ export default function Inventory({ navigation }) {
                     </View>
                     <ClickButtonText value="Here are the maps and legend from the center of the book." />
                     <ClickButtonText value="Hold your finger on an image to see the legend." />
-                    <View style={styles.imagesContainer}>
+                    <View style={styles.imagesContainer}>                        
                         <Pressable
                             onLongPress={handleImageTitheChangeIn}
                             onPressOut={handleImageTitheChangeOut}
                             style={styles.button}>
                             <Image source={imageTitheAsset} />
                         </Pressable>
+                        <View>
+                            <ClickButtonText value="Tithebury: Quest Completion Tracker" />
+                        </View>
+                        <View style={styles.comp}>
+                            <QuestComplete statKey="15" value="15" />
+                            <QuestComplete statKey="16" value="16" />
+                            <QuestComplete statKey="17" value="17" />
+                            <QuestComplete statKey="18" value="18" />
+                        </View>
                         <Pressable
                             onLongPress={handleImageMistChangeIn}
                             onPressOut={handleImageMistChangeOut}
@@ -172,5 +181,9 @@ const styles = StyleSheet.create({
     },
     scrollView: {
         marginHorizontal: 1,
+    },
+    comp: {
+        flex: 1,
+        flexDirection: "row"
     },
 });

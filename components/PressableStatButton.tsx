@@ -14,8 +14,6 @@ export default function PressableStatButton({ value, statKey }: PressableStatBut
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [ text, setText] = useState("0")
 
-
-    
     const save = async() => {
         try {
             await AsyncStorage.setItem (statKey, text )

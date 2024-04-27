@@ -62,6 +62,10 @@ export default function Inventory({ navigation }) {
                         </View>
                     </View>
                     <View>
+                    <ClickButtonText value={'Where did you leave off?'} />
+                    <PressableButtonText statKey={'Section'} value={'Section #'} />
+                    </View>
+                    <View>
                         <ClickButtonText value={'Figured it might be helpful if you could take some notes as you adventure!'} />
                         <PressableButtonText statKey={'Notes1'} value={'Notes'} />
                     </View>

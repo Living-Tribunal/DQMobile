@@ -13,7 +13,6 @@ import ButtonText from "../components/ButtonText";
 import PressableButtonText from "../components/PressableButtonText";
 import PressableInventoryAction from "../components/PressableInventoryAction";
 import PressableStatButton from "../components/PressableStatButton";
-import ButtonTextBigger from "../components/ButtonTextBigger";
 import PressableButtonInventory from "../components/PressableButtonInventory"
 import GenerateRandomName from "../components/GenerateRandomName";
 import Cloak from "../constants/gear/Cloak";
@@ -122,6 +121,10 @@ export default function Inventory({ navigation }) {
                     <View style={styles.backpackContainer} >
                         <PressableButtonText statKey={'Item 3'} value={'Item 3'} />
                         <PressableButtonText statKey={'Item 4'} value={'Item 4'} />
+                    </View>
+                    <View style={styles.backpackContainer} >
+                        <PressableButtonText statKey={'Item 5'} value={'Item 5'} />
+                        <PressableButtonText statKey={'Item 6'} value={'Item 6'} />
                     </View>
                 </ImageBackground>
             </ScrollView>
