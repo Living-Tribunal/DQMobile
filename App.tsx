@@ -92,7 +92,6 @@ function MyStack() {
         </Stack.Navigator>
     );
 }
-
 export default function App() {
     const [fontsLoaded] = useFonts({
         'SteelworksVintageDemo': require('./assets/fonts/SteelworksVintageDemo.otf'),
