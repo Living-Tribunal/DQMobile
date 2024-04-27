@@ -64,7 +64,6 @@ function MyDrawer() {
     );
 } */
 
-
 const Stack = createStackNavigator();
 
 function MyStack() {
