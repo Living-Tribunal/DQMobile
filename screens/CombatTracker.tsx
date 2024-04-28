@@ -51,7 +51,6 @@ export default function CombatTracker({ navigation }) {
                                 </View>
                                 <View style={styles.menuItem}>
                                     <PressableInventoryAction value="Special Abilities" onPress={() => navigation.navigate("Special Abilities")} />
-
                                 </View>
                             </View>
                             <View style={styles.menuContainer}>

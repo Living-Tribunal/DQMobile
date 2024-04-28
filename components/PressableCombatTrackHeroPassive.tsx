@@ -106,8 +106,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 20,
         padding: 10,
-        borderWidth: 1,
-        borderColor: 'white'
     }
 });
 
