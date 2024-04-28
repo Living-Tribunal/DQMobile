@@ -204,8 +204,6 @@ export default function Maps({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignContent: "center",
-    justifyContent: "center",
     backgroundColor: "black",
   },
   imagesContainer: {

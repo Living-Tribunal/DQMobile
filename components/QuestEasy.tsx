@@ -9,7 +9,7 @@ interface QuestCompleteProps{
 }
 
 export default function QuestEasy({ value, statKey}: QuestCompleteProps) {
-    const [ text, setText] = useState("No")
+    const [ text, setText] = useState("\u2610")
     
     const save = async() => {
         try {
@@ -31,11 +31,11 @@ export default function QuestEasy({ value, statKey}: QuestCompleteProps) {
     };
 
     const handleButtonPress = () => {
-        setText("Yes")
+        setText("\u2611")
     }
 
     const handleLongPress = () => {
-        setText("No")
+        setText("\u2610")
     }
 
     useEffect(() => {
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         color: '#ffffff',
-        fontSize: 10,
+        fontSize: 20,
         fontFamily: 'monospace',
         textAlign: 'center',
         fontWeight: 'bold',

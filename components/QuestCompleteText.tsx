@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
             fontWeight: 'bold',
             textAlign: 'center',
             alignContent: 'center',
-            fontSize: 6,
+            fontSize: 8,
             color: '#ffffff',
     },
 });
