@@ -28,16 +28,12 @@ export default function PressableHomeScreenButtonText({value, onPress}: Pressabl
 const styles = StyleSheet.create({
     button: {
         marginTop: 10,
-        justifyContent: "space-between",
-        alignItems: 'center',
         borderRadius: 5,
         borderColor: 'white',
         borderWidth: 1,
     },
     menuText: {
-        flex: 1,
-        justifyContent: 'space-between',
-        padding: 20
+        padding: 20,
     }
 });
 

@@ -7,7 +7,6 @@ import ButtonTextBiggerHome from "../components/ButtonTextBiggerHome";
 import PressableHomeScreenButtonText from "../components/PressableHomeScreenButtonText";
 import ResetHeroButton from '../components/ResetHeroButton';
 
-
 export default function Home({navigation}) {
     const [fontsLoaded] = useFonts({
         'SteelworksVintageDemo': require('../assets/fonts/SteelworksVintageDemo.otf'),
@@ -35,7 +34,7 @@ export default function Home({navigation}) {
                 <View style={styles.heroButtonContent}>
                     <PressableHomeScreenButtonText value="Enter, Hero!" onPress={() => navigation.navigate("Inventory")} />
                 </View>
-                <View style={styles.heroResetContent}>
+                <View style={styles.resetButtonContent}>
                     <ResetHeroButton value="Reset Hero" />
                 </View>
             </View>
@@ -52,9 +51,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'SteelworksVintageDemo',
         fontSize: 55,
-        backgroundColor: 'rgba(20, 20, 20, 0.4)',
-        padding: 7,
-        flexDirection: 'column',
+        backgroundColor: 'rgba(20, 20, 20, 0.6)',
         flex: 1,
         justifyContent: 'center'
     },
@@ -72,13 +69,10 @@ const styles = StyleSheet.create({
         height: 15,
       },
       heroButtonContent: {
-        flexDirection: 'row',
-    },
-    heroResetContent:{
-        width: 150,
         justifyContent: 'center',
+    },
+    resetButtonContent: {
         alignItems: 'center',
-        flexDirection: 'column',
-        marginLeft: 110
+        justifyContent: 'center',
     }
 });

@@ -56,7 +56,7 @@ export default function Inventory({ navigation }) {
                     <View>
                         <View style={styles.menuContainer}>
                             <View style={styles.menuItem}> 
-                            <PressableInventoryAction value="Special Abilities" onPress={() => navigation.navigate("Special Abilities")} />
+                                <PressableInventoryAction value="Special Abilities" onPress={() => navigation.navigate("Special Abilities")} />
                             </View>
                             <View style={styles.menuItem}>
                                 <PressableInventoryAction value="Combat Tracker" onPress={() => navigation.navigate("Combat Tracker")} />
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignContent: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgb(20, 20, 20)',
+        backgroundColor: 'black',
     },
     heroSheetContainer: {
         flexDirection: 'row',

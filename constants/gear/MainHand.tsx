@@ -18,7 +18,7 @@ const MainHand: MaintHandItem[] =[
     },
     {
         key: '4',
-        value: 'Goblin Hewer\n------------\nSP: 1\nAR: 1'
+        value: 'Goblinhewer\n------------\nSP: 1\nAR: 1'
     },
     {
         key: '5',

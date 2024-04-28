@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'white',
         margin: 2,
-        borderRadius: 2,
+        borderRadius: 5,
         padding: 5
     },
     modalTextInput: {

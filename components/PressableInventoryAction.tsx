@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         justifyContent: "center",
         alignItems: 'center',
-        borderRadius: 2
+        borderRadius: 5
     },
     menuText: {
         flex: 1,

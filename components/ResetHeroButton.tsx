@@ -3,6 +3,7 @@ import { StyleSheet, Pressable, View, Modal, Text } from "react-native";
 import ClickButtonText from "./HeaderText";
 import ButtonInfoText from "./ButtonInfoText";
 import ResetHero from "./ResetHeroFunction";
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 interface ResetHeroButtonProp {
     value: string
@@ -20,8 +21,10 @@ export default function ResetHeroButton({ value }: ResetHeroButtonProp) {
                         backgroundColor: pressed ? "red" : "transparent",
                     },
                 ]}
-                onPress={() => setIsModalVisible(true)}>
-                <ClickButtonText value={value} />
+                onLongPress={() => setIsModalVisible(true)}>
+                
+                    <ClickButtonText value={value} /> 
+                 
             </Pressable>
             <Modal
                 transparent={true}
@@ -39,7 +42,10 @@ export default function ResetHeroButton({ value }: ResetHeroButtonProp) {
                             },
                         ]}
                         onLongPress={() => {ResetHero(), setIsModalVisible(false) }}>
-                        <Text style={styles.modalButton}>Reset Hero</Text>
+                        <View style={styles.resetContainer}>
+                            <Text style={styles.modalButton}>Reset Hero</Text>
+                            <Ionicons name="trash-sharp" size={32} color="white" />
+                        </View>
                     </Pressable>
                 </View>
             </Modal>
@@ -53,11 +59,9 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'white',
         borderRadius: 5,
-        marginTop: 10
     },
     heroModalContainer: {
         flex: 1,
-        flexDirection: 'column',
         backgroundColor: 'rgb(20, 20, 20)',
         alignItems: 'center',
         justifyContent: 'center',
@@ -74,9 +78,11 @@ const styles = StyleSheet.create({
         fontFamily: 'monospace',
         fontWeight: 'bold',
         fontSize: 20,
-        padding: 10,
-        borderWidth: 1,
-        borderColor: 'white'
+        padding: 10
+    },
+    resetContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
     }
 });
 

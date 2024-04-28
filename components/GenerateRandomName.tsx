@@ -89,7 +89,7 @@ export default function PressableButtonText({ value, statKey }: PressableButtonT
                                 styles.button,
                                 {
                                     backgroundColor: pressed
-                                        ? "#931e1e"
+                                        ? "red"
                                         : "rgb(20, 20, 20)",
                                 },
                             ]}
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'white',
         margin: 2,
-        borderRadius: 2,
+        borderRadius: 5,
         padding: 5
     },
     modalTextInput: {
