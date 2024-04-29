@@ -38,7 +38,7 @@ export default function SpecialAbilities({ navigation }) {
             <StatusBar hidden />
             <ScrollView style={styles.scrollView}>
                 <ImageBackground imageStyle={{ opacity: 0.2, resizeMode: 'repeat', }} source={require("../assets/images/texture.jpg")}>
-                    <View>
+                   {/*  <View>
                         <View style={styles.menuContainer}>
                             <View style={styles.menuItem}>
                                 <PressableInventoryAction value="Inventory" onPress={() => navigation.navigate("Inventory")} />
@@ -58,7 +58,7 @@ export default function SpecialAbilities({ navigation }) {
                                 <PressableInventoryAction value="Home" onPress={() => navigation.navigate("Home")} />
                             </View>
                         </View>
-                    </View>
+                    </View> */}
                     <ButtonText value={'-Speed (sp)-'} />
                     <View>
                         <PressableButtonInventory statKey={'Speed Mod 1'} value={'Speed Modifier 1'} data={Passive} />

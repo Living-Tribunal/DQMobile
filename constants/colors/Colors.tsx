@@ -19,13 +19,13 @@ export interface Palette {
     textColor: 'white',
     scrollviewBackground: 'black',
     deleteRed: 'red',
-    generate: '#1e6c93',
+    generate: 'blue',
     average: 'orange',
     easy: 'green',
     hard: 'blue',
     hardest: 'red',
     legendary: 'purple',
-    home: '#00000071'
+    home: '#00000090'
 
 
 

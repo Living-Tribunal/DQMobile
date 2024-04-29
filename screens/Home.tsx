@@ -33,7 +33,11 @@ export default function Home({navigation}) {
                     <ButtonTextBiggerHome value={'Destiny Quest'} />
                     <Text style={styles.button}>-Companion App-</Text>
                 <View style={styles.heroButtonContent}>
-                    <PressableHomeScreenButtonText value="Enter, Hero!" onPress={() => navigation.navigate("Inventory")} />
+                    <PressableHomeScreenButtonText value="Inventory" onPress={() => navigation.navigate("Inventory")} />
+                    <PressableHomeScreenButtonText value="Special Abilities" onPress={() => navigation.navigate("Special Abilities")} />
+                    <PressableHomeScreenButtonText value="Combat Tracker" onPress={() => navigation.navigate("Combat Tracker")} />
+                    <PressableHomeScreenButtonText value="Maps" onPress={() => navigation.navigate("Maps")} />
+                    <PressableHomeScreenButtonText value="Notes" onPress={() => navigation.navigate("Notes")} />
                 </View>
                 <View style={styles.resetButtonContent}>
                     <ResetHeroButton value="Reset Hero" />

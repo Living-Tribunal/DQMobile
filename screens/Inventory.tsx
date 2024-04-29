@@ -54,7 +54,7 @@ export default function Inventory({ navigation }) {
             <StatusBar  hidden/>
             <ScrollView style={styles.scrollView}>
                 <ImageBackground imageStyle={{ opacity: 0.2, resizeMode: 'repeat'}} source={require("../assets/images/texture.jpg")}>
-                    <View>
+                    {/* <View>
                         <View style={styles.menuContainer}>
                             <View style={styles.menuItem}> 
                                 <PressableInventoryAction value="Special Abilities" onPress={() => navigation.navigate("Special Abilities")} />
@@ -74,7 +74,7 @@ export default function Inventory({ navigation }) {
                                 <PressableInventoryAction value="Home" onPress={() => navigation.navigate("Home")} />
                             </View>
                         </View>
-                    </View>
+                    </View> */}
                     <ButtonText value={'-Hero-'} />
                     <View style={styles.randomName}>
                         <GenerateRandomName statKey={'Name'} value={'Name'} />

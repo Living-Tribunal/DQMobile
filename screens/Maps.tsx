@@ -86,7 +86,7 @@ export default function Maps({ navigation }) {
         >
           <View>
             <View>
-              <View style={styles.menuContainer}>
+              {/* <View style={styles.menuContainer}>
                 <View style={styles.menuItem}>
                   <PressableInventoryAction
                     value="Inventory"
@@ -119,7 +119,7 @@ export default function Maps({ navigation }) {
                     onPress={() => navigation.navigate("Home")}
                   />
                 </View>
-              </View>
+              </View>  */}
             </View>
           </View>
           <ClickButtonText value="Here are the maps and legend from the center of the book." />

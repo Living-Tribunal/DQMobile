@@ -58,7 +58,7 @@ export default function ResetHeroButton({ value }: ResetHeroButtonProp) {
 const styles = StyleSheet.create({
     button: {
         borderWidth: 1,
-        borderColor: 'white',
+        borderColor: Colors.textColor,
         borderRadius: 5,
     },
     heroModalContainer: {

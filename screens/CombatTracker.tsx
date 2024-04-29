@@ -44,7 +44,7 @@ export default function CombatTracker({ navigation }) {
                     <View style={styles.heroSheetContainer}>
                     </View>
                     <View>
-                        <View>
+                        {/* <View>
                             <View style={styles.menuContainer}>
                                 <View style={styles.menuItem}>
                                     <PressableInventoryAction value="Inventory" onPress={() => navigation.navigate("Inventory")} />
@@ -65,7 +65,7 @@ export default function CombatTracker({ navigation }) {
                                     <PressableInventoryAction value="Home" onPress={() => navigation.navigate("Home")} />
                                 </View>
                             </View>
-                        </View>
+                        </View> */}
                         <View style={styles.combatContainer}>
                             <View>
                                 <ButtonText value={'-Your Hero-'} />
