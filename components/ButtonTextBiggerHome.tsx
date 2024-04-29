@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { StyleSheet, Text, TextStyle } from "react-native";
+import { Colors } from '../constants/colors/Colors';
 
 interface ButtonTextBiggerProps {
     value: string;
@@ -15,9 +16,9 @@ export default ButtonTextBigger;
 
 const styles = StyleSheet.create({
     topText: {
-        color: "gold",
+        color: Colors.backgroundGold,
         fontFamily: "SteelworksVintageDemo",
         fontSize: 55,
         textAlign: "center",
-    } as TextStyle,
+    },
 });

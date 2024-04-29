@@ -6,6 +6,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import ButtonTextBiggerHome from "../components/ButtonTextBiggerHome";
 import PressableHomeScreenButtonText from "../components/PressableHomeScreenButtonText";
 import ResetHeroButton from '../components/ResetHeroButton';
+import { Colors } from '../constants/colors/Colors';
 
 export default function Home({navigation}) {
     const [fontsLoaded] = useFonts({
@@ -48,16 +49,16 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     topText: {
-        color: 'white',
+        color: Colors.textColor,
         fontFamily: 'SteelworksVintageDemo',
         fontSize: 55,
-        backgroundColor: 'rgba(20, 20, 20, 0.6)',
+        backgroundColor: Colors.home,
         flex: 1,
         justifyContent: 'center'
     },
     button: {
         fontFamily: 'monospace',
-        color: 'white',
+        color: Colors.textColor,
         textAlign: 'center',
         fontSize: 30,
     },

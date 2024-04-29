@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, Pressable, View, TextInput, Modal, Text } from "react-native";
 import ClickButtonText from "./HeaderText";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Colors } from '../constants/colors/Colors';
 
 interface PressableButtonTextProps {
     value: string;
@@ -41,7 +42,7 @@ export default function PressableButtonText({ value, statKey }: PressableButtonT
                 style={({ pressed }) => [
                     styles.button,
                     {
-                        backgroundColor: pressed ? "gold" : "transparent",
+                        backgroundColor: pressed ? Colors.backgroundGold : "transparent",
                     },
                 ]}
                 onPress={() => setIsModalVisible(true)}
@@ -66,7 +67,7 @@ export default function PressableButtonText({ value, statKey }: PressableButtonT
                             style={({ pressed }) => [
                                 styles.button,
                                 {
-                                    backgroundColor: pressed ? "gold" : "rgb(20, 20, 20)",
+                                    backgroundColor: pressed ? Colors.backgroundGold : Colors.backgroundBlack,
                                 },
                             ]}
                             onPress={() => {
@@ -80,7 +81,7 @@ export default function PressableButtonText({ value, statKey }: PressableButtonT
                             style={({ pressed }) => [
                                 styles.button,
                                 {
-                                    backgroundColor: pressed ? "#ff0000" : "rgb(20, 20, 20)",
+                                    backgroundColor: pressed ? Colors.deleteRed : Colors.backgroundBlack,
                                 },
                             ]}
                             onLongPress={() => { setText(""); setIsModalVisible(false); save(); }}>
@@ -100,48 +101,48 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     dropDownStyle: {
-        backgroundColor: "rgb(255, 255, 255)",
-        color: 'gold',
+        backgroundColor: Colors.textColor,
+        color: Colors.backgroundGold,
     },
     button: {
         justifyContent: "center",
         alignItems: "center",
         borderWidth: 1,
-        borderColor: 'white',
+        borderColor: Colors.textColor,
         margin: 2,
         borderRadius: 5,
         padding: 5
     },
     modalTextInput: {
-        backgroundColor: '#ffffff',
+        backgroundColor: Colors.textColor,
         width: 300,
         height: 50,
         textAlign: 'center',
-        borderColor: '#001d2d',
+        borderColor: Colors.scrollviewBackground,
         margin: 10
     },
     heroModalContainer: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: 'rgb(20, 20, 20)',
+        backgroundColor: Colors.backgroundBlack,
         alignItems: 'center',
         justifyContent: 'center',
     },
     heroModalContainerButtons: {
         flexDirection: 'row',
-        backgroundColor: '#001d2d',
+        backgroundColor: Colors.scrollviewBackground,
         alignItems: 'center',
         justifyContent: 'center',
     },
     textStyle: {
-        color: '#ffffff',
+        color: Colors.textColor,
         fontSize: 15,
         fontFamily: 'monospace',
         textAlign: 'center',
         fontWeight: 'bold',
     },
     modalButton: {
-        color: 'white',
+        color: Colors.textColor,
         fontFamily: 'monospace',
         fontWeight: 'bold',
         fontSize: 13,

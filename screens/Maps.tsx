@@ -19,6 +19,7 @@ import QuestHard from "../components/QuestHard";
 import QuestHardest from "../components/QuestHardest";
 import QuestBoss from "../components/QuestBoss";
 import QuestLegendary from "../components/QuestLegendary";
+import { Colors } from '../constants/colors/Colors';
 
 export default function Maps({ navigation }) {
   const bone = require("../assets/images/bone.jpg");
@@ -204,7 +205,7 @@ export default function Maps({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: Colors.backgroundBlack,
   },
   imagesContainer: {
     backgroundColor: "transparent",
@@ -221,7 +222,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     flex: 1,
-    backgroundColor: "gold",
+    backgroundColor: Colors.backgroundGold,
     padding: 5,
   },
   button: {
@@ -245,8 +246,5 @@ const styles = StyleSheet.create({
   comp: {
     flex: 1,
     flexDirection: "row",
-  },
-  questComplete15: {
-    backgroundColor: "blue",
   },
 });

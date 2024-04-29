@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Pressable, View } from "react-native";
 import ClickButtonText from "./HeaderText";
+import { Colors } from '../constants/colors/Colors';
 
 interface PressableHomeScreenButtonTextPro{
     value: string,
@@ -15,7 +16,7 @@ export default function PressableHomeScreenButtonText({value, onPress}: Pressabl
             style={({ pressed }) => [
                 styles.button,
                 {
-                    backgroundColor: pressed ? "gold" : "transparent",
+                    backgroundColor: pressed ? Colors.backgroundGold : "transparent",
                 },
             ]}
             onPress={(onPress)}>
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     button: {
         marginTop: 10,
         borderRadius: 5,
-        borderColor: 'white',
+        borderColor: Colors.textColor,
         borderWidth: 1,
     },
     menuText: {

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, Pressable, View, Text} from "react-native";
 import QuestCompleteText from "./QuestCompleteText";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Colors } from '../constants/colors/Colors';
 
 interface QuestLegendaryProps{
     value: string,
@@ -52,7 +53,7 @@ export default function QuestLegendary({ value, statKey}: QuestLegendaryProps) {
                 style={({ pressed }) => [
                     styles.button,
                     {
-                        backgroundColor: pressed ? "gold" : "purple",
+                        backgroundColor: pressed ? Colors.backgroundGold : Colors.legendary,
                     },
                 ]}
                 onPress={() => handleButtonPress()}
@@ -76,13 +77,13 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         borderWidth: 1,
-        borderColor: 'white',
+        borderColor: Colors.textColor,
         margin: 2,
         borderRadius: 2,
         padding: 5
     },
     textStyle: {
-        color: '#ffffff',
+        color: Colors.textColor,
         fontSize: 20,
         fontFamily: 'monospace',
         textAlign: 'center',

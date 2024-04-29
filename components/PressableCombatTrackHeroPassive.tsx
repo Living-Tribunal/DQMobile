@@ -3,7 +3,8 @@ import { StyleSheet, Pressable, View, Modal, Text, ScrollView } from "react-nati
 import ClickButtonText from "./HeaderText";
 import ButtonText from "../components/ButtonText";
 import HeroPassiveTextField from "./HeroPassiveTextField";
-import HeaderText from "../components/HeaderText"
+import HeaderText from "../components/HeaderText";
+import { Colors } from '../constants/colors/Colors';
 
 export default function PressableCombatTrackHeroPassive({ }) {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -13,7 +14,7 @@ export default function PressableCombatTrackHeroPassive({ }) {
                 style={({ pressed }) => [
                     styles.button,
                     {
-                        backgroundColor: pressed ? "gold" : "transparent",
+                        backgroundColor: pressed ? Colors.backgroundGold : "transparent",
                     },
                 ]}
                 onPress={() => setIsModalVisible(true)}>
@@ -65,7 +66,7 @@ export default function PressableCombatTrackHeroPassive({ }) {
                         style={({ pressed }) => [
                             styles.button,
                             {
-                                backgroundColor: pressed ? "gold" : "transparent",
+                                backgroundColor: pressed ? Colors.backgroundGold : "transparent",
                             },
                         ]}
                         onPress={() => setIsModalVisible(false)}> 
@@ -82,26 +83,26 @@ export default function PressableCombatTrackHeroPassive({ }) {
 const styles = StyleSheet.create({
     button: {
         borderWidth: 1,
-        borderColor: 'white',
+        borderColor: Colors.textColor,
         borderRadius: 5,
         marginTop: 10
     },
     heroModalContainer: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: 'rgb(20, 20, 20)',
+        backgroundColor: Colors.backgroundBlack,
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20
     },
     textStyle: {
-        color: '#ffffff',
+        color: Colors.textColor,
         fontSize: 25,
         fontFamily: 'monospace',
         textAlign: 'center',
     },
     modalButton: {
-        color: 'white',
+        color: Colors.textColor,
         fontFamily: 'monospace',
         fontWeight: 'bold',
         fontSize: 20,

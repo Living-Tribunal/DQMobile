@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Pressable, View } from "react-native";
 import PressableMenuText from "./PressableMenuText";
+import { Colors } from '../constants/colors/Colors';
 
 interface PressableMenuActionProps {
     value: string
@@ -15,7 +16,7 @@ export default function PressableMenuAction({value}: PressableMenuActionProps) {
             style={({ pressed }) => [
                 styles.button,
                 {
-                    backgroundColor: pressed ? "#0095ff" : "rgb(255, 255, 255)",
+                    backgroundColor: pressed ? Colors.hard : Colors.textColor,
                 },
             ]}
             onPressIn={() => setIsSelected(true)}

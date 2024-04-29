@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { StyleSheet, Text } from "react-native";
+import { Colors } from '../constants/colors/Colors';
 
 interface HomeScreenButtonTextBiggerProps {
     value: string;
@@ -15,7 +16,7 @@ export default HomeScreenButtonTextBigger;
 
 const styles = StyleSheet.create({
     topText: {
-        color: "gold",
+        color: Colors.backgroundGold,
         fontFamily: "SteelworksVintageDemo",
         fontSize: 55,
         textAlign: "center",

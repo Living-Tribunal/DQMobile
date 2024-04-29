@@ -3,6 +3,7 @@ import { StyleSheet, Pressable, View, Modal, Text, ScrollView } from "react-nati
 import ClickButtonText from "./HeaderText";
 import ButtonInfoText from "./ButtonInfoText";
 import HeaderText from "./HeaderText";
+import { Colors } from '../constants/colors/Colors';
 
 interface PressableStatButtonProp{
     value: string
@@ -17,7 +18,7 @@ export default function PressableStatButton({ value }: PressableStatButtonProp) 
                 style={({ pressed }) => [
                     styles.button,
                     {
-                        backgroundColor: pressed ? "gold" : "transparent",
+                        backgroundColor: pressed ? Colors.backgroundGold : "transparent",
                     },
                 ]}
                 onPress={() => setIsModalVisible(true)}>
@@ -42,7 +43,7 @@ export default function PressableStatButton({ value }: PressableStatButtonProp) 
                         style={({ pressed }) => [
                             styles.button,
                             {
-                                backgroundColor: pressed ? "gold" : "transparent",
+                                backgroundColor: pressed ? Colors.backgroundGold : "transparent",
                             },
                         ]}
                         onPress={() => setIsModalVisible(false)}> 
@@ -59,31 +60,31 @@ export default function PressableStatButton({ value }: PressableStatButtonProp) 
 const styles = StyleSheet.create({
     button: {
         borderWidth: 1,
-        borderColor: 'white',
+        borderColor: Colors.textColor,
         borderRadius: 5,
     },
     heroModalContainer: {
         flexDirection: 'column',
-        backgroundColor: 'rgb(20, 20, 20)',
+        backgroundColor: Colors.backgroundBlack,
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20
     },
     textStyle: {
-        color: '#ffffff',
+        color: Colors.textColor,
         fontSize: 50,
         fontFamily: 'monospace',
         textAlign: 'center',
         padding: 10
     },
     modalButton: {
-        color: 'white',
+        color: Colors.textColor,
         fontFamily: 'monospace',
         fontWeight: 'bold',
         fontSize: 20,
         padding: 10,
         borderWidth: 1,
-        borderColor: 'white'
+        borderColor: Colors.textColor
     }
 });
 

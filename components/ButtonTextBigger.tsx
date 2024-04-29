@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { StyleSheet, Text, TextStyle } from "react-native";
+import { Colors } from '../constants/colors/Colors';
 
 interface ButtonTextProps {
     value: string;
@@ -15,9 +16,9 @@ export default ButtonText;
 
 const styles = StyleSheet.create({
     topText: {
-        color: 'gold',
+        color: Colors.backgroundGold,
         fontFamily: "SteelworksVintageDemo",
         fontSize: 35,
         textAlign: "center",
-    } as TextStyle,
+    },
 });

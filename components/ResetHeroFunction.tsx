@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Colors } from '../constants/colors/Colors';
 
 export default async function ResetHero() {
     try {

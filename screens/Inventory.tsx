@@ -29,6 +29,7 @@ import HeroPath from "../components/HeroPath";
 import HeroCareer from "../components/HeroCareer";
 import PressableCrownsButton from "../components/PressableCrownsButton";
 import PressableHealthButton from "../components/PressableHealthButton"
+import { Colors } from '../constants/colors/Colors';
 
 export default function Inventory({ navigation }) {
 
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignContent: 'center',
         justifyContent: 'center',
-        backgroundColor: 'black',
+        backgroundColor: Colors.backgroundBlack,
     },
     heroSheetContainer: {
         flexDirection: 'row',
@@ -145,12 +146,12 @@ const styles = StyleSheet.create({
         alignContent: 'center',
     },
     heroNameTextInput: {
-        backgroundColor: "white",
+        backgroundColor: Colors.textColor,
         fontFamily: "monospace",
         textAlign: "center",
         flex: 1,
         borderWidth: 1,
-        borderColor: "rgb(20, 20, 20)",
+        borderColor: Colors.backgroundBlack,
     },
     statsContainer: {
         flexDirection: 'row',
@@ -174,19 +175,19 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         flex: 1,
-        backgroundColor: 'gold',
+        backgroundColor: Colors.backgroundGold,
         padding: 5
     },
     modalTextInput: {
-        backgroundColor: 'white',
+        backgroundColor: Colors.textColor,
         width: 180,
         textAlign: 'center',
         borderWidth: 2,
-        borderColor: 'black',
+        borderColor: Colors.backgroundBlack,
     },
     heroModalText: {
-        color: '#000000',
-        backgroundColor: 'gold',
+        color: Colors.backgroundBlack,
+        backgroundColor: Colors.backgroundGold,
         borderWidth: 2,
         fontFamily: 'monospace',
         fontWeight: 'bold',
@@ -201,7 +202,7 @@ const styles = StyleSheet.create({
     },
     scrollView: {
         marginHorizontal: 1,
-        backgroundColor: 'black'
+        backgroundColor: Colors.backgroundBlack
     },
     backpackContainer: {
         flex: 1,

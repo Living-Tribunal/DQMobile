@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text } from "react-native";
+import { Colors } from '../constants/colors/Colors';
 
 interface PressableMenuTextProps{
     value: string 
@@ -15,7 +16,7 @@ export default PressableMenuText;
 const styles = StyleSheet.create({
     menuText: {
         fontFamily: 'monospace',
-        color: '#ffffff',
+        color: Colors.textColor,
         padding: 7,
         fontWeight: 'bold',
         textAlign: 'center',

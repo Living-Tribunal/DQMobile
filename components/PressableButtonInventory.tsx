@@ -3,6 +3,7 @@ import { StyleSheet, Pressable, View, Modal, Text } from "react-native";
 import ClickButtonText from "./HeaderText";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { SelectList } from 'react-native-dropdown-select-list';
+import { Colors } from "../constants/colors/Colors";
 
 interface PressableButtonTextProps {
     value: string;
@@ -43,7 +44,7 @@ function PressableButtonText({ value, statKey, data }: PressableButtonTextProps)
                 style={({ pressed }) => [
                     styles.button,
                     {
-                        backgroundColor: pressed ? "gold" : "transparent",
+                        backgroundColor: pressed ? Colors.backgroundGold : "transparent",
                     },
                 ]}
                 onPress={() => setIsModalVisible(true)}>
@@ -60,9 +61,9 @@ function PressableButtonText({ value, statKey, data }: PressableButtonTextProps)
                         data={data}
                         save="value"
                         fontFamily='monospace'
-                        boxStyles={{ borderRadius: 5, borderWidth: 2, backgroundColor: "gold" }}
-                        dropdownTextStyles={{ color: 'white' }}
-                        inputStyles={{ color: '#000000' }}
+                        boxStyles={{ borderRadius: 5, borderWidth: 2, backgroundColor: Colors.backgroundGold }}
+                        dropdownTextStyles={{ color: Colors.textColor }}
+                        inputStyles={{ color: Colors.scrollviewBackground }}
                         searchPlaceholder='Search for Item/Passive'
                         placeholder='Select Item'
                     />
@@ -71,7 +72,7 @@ function PressableButtonText({ value, statKey, data }: PressableButtonTextProps)
                             style={({ pressed }) => [
                                 styles.button,
                                 {
-                                    backgroundColor: pressed ? "gold" : "rgb(20, 20, 20)",
+                                    backgroundColor: pressed ? Colors.backgroundGold : Colors.backgroundBlack,
                                 },
                             ]}
                             onPress={() => {
@@ -84,7 +85,7 @@ function PressableButtonText({ value, statKey, data }: PressableButtonTextProps)
                             style={({ pressed }) => [
                                 styles.button,
                                 {
-                                    backgroundColor: pressed ? "#ff0000" : "rgb(20, 20, 20)",
+                                    backgroundColor: pressed ? Colors.deleteRed : Colors.backgroundBlack,
                                 },
                             ]}
                             onLongPress={() => { setSelectedDropDown(""), setIsModalVisible(false), save() }}>
@@ -110,41 +111,41 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         borderWidth: 1,
-        borderColor: 'white',
+        borderColor: Colors.textColor,
         margin: 2,
         borderRadius: 5,
         padding: 5
     },
     modalTextInput: {
-        backgroundColor: '#ffffff',
+        backgroundColor: Colors.textColor,
         width: 300,
         textAlign: 'center',
-        borderColor: 'gold',
+        borderColor: Colors.backgroundGold,
         margin: 10
     },
     heroModalContainer: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: 'rgb(20, 20, 20)',
+        backgroundColor: Colors.backgroundBlack,
         alignItems: 'center',
         justifyContent: 'center',
     },
     heroModalContainerButtons: {
         flexDirection: 'row',
-        backgroundColor: 'rgb(20, 20, 20)',
+        backgroundColor: Colors.backgroundBlack,
         alignItems: 'center',
         justifyContent: 'center',
     },
 
     textStyle: {
-        color: '#ffffff',
+        color: Colors.textColor,
         fontSize: 10,
         fontFamily: 'monospace',
         textAlign: 'center',
         fontWeight: 'bold',
     },
     modalButton: {
-        color: 'white',
+        color: Colors.textColor,
         fontFamily: 'monospace',
         fontWeight: 'bold',
         fontSize: 15,

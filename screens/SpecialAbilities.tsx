@@ -11,9 +11,9 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import ButtonText from "../components/ButtonText";
 import PressableInventoryAction from "../components/PressableInventoryAction";
-import ButtonTextBigger from "../components/ButtonTextBigger";
 import Passive from "../constants/passive/Passive";
 import PressableButtonInventory from "../components/PressableButtonInventory";
+import { Colors } from '../constants/colors/Colors';
 
 export default function SpecialAbilities({ navigation }) {
     const [fontsLoaded] = useFonts({
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignContent: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgb(20, 20, 20)',
+        backgroundColor: Colors.backgroundBlack,
     },
     menuItem: {
         flex: 1,
@@ -119,12 +119,12 @@ const styles = StyleSheet.create({
         alignContent: 'center',
     },
     heroNameTextInput: {
-        backgroundColor: "white",
+        backgroundColor: Colors.textColor,
         fontFamily: "monospace",
         textAlign: "center",
         flex: 1,
         borderWidth: 1,
-        borderColor: "black",
+        borderColor: Colors.backgroundBlack,
     },
     statsContainer: {
         flexDirection: 'row',
@@ -143,19 +143,19 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         flex: 1,
-        backgroundColor: 'gold',
+        backgroundColor: Colors.backgroundGold,
         padding: 5
     },
     modalTextInput: {
-        backgroundColor: 'white',
+        backgroundColor: Colors.textColor,
         width: 180,
         textAlign: 'center',
         borderWidth: 2,
-        borderColor: 'black',
+        borderColor: Colors.scrollviewBackground,
     },
     heroModalText: {
-        color: '#000000',
-        backgroundColor: 'gold',
+        color: Colors.backgroundBlack,
+        backgroundColor: Colors.backgroundGold,
         borderWidth: 2,
         fontFamily: 'monospace',
         fontWeight: 'bold',
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     },
     scrollView: {
         marginHorizontal: 1,
-        backgroundColor: 'black'
+        backgroundColor: Colors.backgroundBlack
     },
     backpackContainer: {
         flex: 1,

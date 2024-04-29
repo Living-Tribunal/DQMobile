@@ -12,6 +12,7 @@ import Notes from './screens/Notes';
 import Maps from './screens/Maps';
 //import { CardStyleInterpolators } from '@react-navigation/stack';
 import CombatTracker from './screens/CombatTracker';
+import { Colors } from './constants/colors/Colors';
 //import { createDrawerNavigator } from '@react-navigation/drawer';
 
 SplashScreen.preventAutoHideAsync();
@@ -73,10 +74,10 @@ function MyStack() {
             screenOptions={{gestureEnabled:true, 
                 gestureDirection: 'horizontal',
                 headerStyle: {
-                    backgroundColor: 'gold',
+                    backgroundColor: Colors.backgroundGold,
                   },
                   headerTitleAlign: 'center',
-                  headerTintColor: '#141414',
+                  headerTintColor: Colors.backgroundBlack,
                   headerTitleStyle: {
                     fontWeight: 'bold',
                     fontFamily: 'monospace',
@@ -120,12 +121,12 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'rgb(0, 0, 0)',
+        backgroundColor: Colors.scrollviewBackground,
         alignItems: 'center',
         justifyContent: 'center',
     },
     topText: {
-        color: 'white',
+        color: Colors.textColor,
         fontFamily: 'SteelworksVintageDemo',
         fontSize: 55,
         justifyContent: 'center',
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
         fontFamily: 'monospace',
         justifyContent: 'center',
         alignContent: 'center',
-        color: 'white',
+        color: Colors.textColor,
         textAlign: 'center',
         fontSize: 20,
     },

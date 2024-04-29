@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Pressable, View } from "react-native";
 import PressableMenuText from "./PressableMenuText";
+import { Colors } from '../constants/colors/Colors';
 
 interface PressableInventoryActionProps{
     value: string
@@ -15,7 +16,7 @@ export default function PressableInventoryAction({value, onPress}: PressableInve
             style={({ pressed }) => [
                 styles.button,
                 {
-                    backgroundColor: pressed ? "#1e6c93" : "rgb(20, 20, 20)",
+                    backgroundColor: pressed ? Colors.hard : Colors.backgroundBlack,
                 },
             ]}
             onPress={onPress}>

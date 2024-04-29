@@ -3,8 +3,6 @@ interface CloakItem {
     value: string;
 }
 
-
-
 const Cloak: CloakItem[] =[
     {
         key: '1',

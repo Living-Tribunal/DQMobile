@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
+import { Colors } from '../constants/colors/Colors';
 
 interface PressableStatTextProp {
     value: string
@@ -19,6 +20,6 @@ const styles = StyleSheet.create({
             textAlign: 'center',
             alignContent: 'center',
             fontSize: 6,
-            color: '#ffffff',
+            color: Colors.textColor,
     },
 });

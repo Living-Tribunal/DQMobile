@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Colors } from '../constants/colors/Colors';
 
 interface OppSpeedState {
     randomNumber: number | null;
@@ -72,21 +73,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    backgroundColor: 'gold',
+    backgroundColor: Colors.backgroundGold,
     paddingHorizontal:10,
     paddingVertical: 10,
     borderRadius: 5,
     marginBottom: 20,
   },
   buttonText: {
-    color: 'black',
+    color: Colors.scrollviewBackground,
     fontSize: 13,
     fontWeight: 'bold',
   },
   randomNumber: {
     fontSize: 13,
     fontWeight: 'bold',
-    color: '#ffffff',
+    color: Colors.textColor,
   },
 });
 

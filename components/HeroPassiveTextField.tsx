@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Pressable, View, Modal, Text} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Colors } from '../constants/colors/Colors';
 
 interface HeroPassiveTextFieldProp {
     statKey: string,
@@ -47,8 +48,8 @@ function HeroPassiveTextField({ statKey }: HeroPassiveTextFieldProp) {
                                 style={({ pressed }) => [
                                     styles.button,
                                     {
-                                        backgroundColor: pressed ? "gold" : "rgb(20, 20, 20)",
-                                        color: pressed ? "rgb(20, 20, 20)" : "white",
+                                        backgroundColor: pressed ? Colors.backgroundGold : Colors.backgroundBlack,
+                                        color: pressed ? Colors.backgroundBlack : Colors.textColor,
                                     },
                                 ]}
                                 onPress={() => {
@@ -76,41 +77,41 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         borderWidth: 1,
-        borderColor: 'white',
+        borderColor: Colors.textColor,
         margin: 2,
         borderRadius: 2,
         padding: 5
     },
     modalTextInput: {
-        backgroundColor: '#ffffff',
+        backgroundColor: Colors.textColor,
         width: 300,
         textAlign: 'center',
-        borderColor: 'gold',
+        borderColor: Colors.backgroundGold,
         margin: 10
     },
     heroModalContainer: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: 'rgb(20, 20, 20)',
+        backgroundColor: Colors.backgroundBlack,
         alignItems: 'center',
         justifyContent: 'center',
     },
     heroModalContainerButtons: {
         flexDirection: 'row',
-        backgroundColor: 'rgb(20, 20, 20)',
+        backgroundColor: Colors.backgroundBlack,
         alignItems: 'center',
         justifyContent: 'center',
     },
 
     textStyle: {
-        color: '#ffffff',
+        color: Colors.textColor,
         fontSize: 10,
         fontFamily: 'monospace',
         textAlign: 'center',
         fontWeight: 'bold',
     },
     modalButton: {
-        color: 'white',
+        color: Colors.textColor,
         fontFamily: 'monospace',
         fontWeight: 'bold',
         fontSize: 15,

@@ -17,6 +17,7 @@ import OpponentDice from '../components/OpponentDice'
 import PressableStatButton from '../components/PressableStatButton';
 import PressableCombatTrackHeroPassive from "../components/PressableCombatTrackHeroPassive";
 import PressableButtonText from '../components/PressableButtonText';
+import { Colors } from '../constants/colors/Colors';
 
 export default function CombatTracker({ navigation }) {
     const [fontsLoaded] = useFonts({
@@ -121,11 +122,11 @@ const styles = StyleSheet.create({
         flex: 1,
         alignContent: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgb(20, 20, 20)',
+        backgroundColor: Colors.backgroundBlack,
     },
     scrollView: {
         marginHorizontal: 1,
-        backgroundColor: 'black'
+        backgroundColor: Colors.backgroundBlack
     },
     heroSheetContainer: {
         flexDirection: 'row',
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         flex: 1,
-        backgroundColor: 'gold',
+        backgroundColor: Colors.backgroundGold,
         padding: 5
     },
     menuItem: {

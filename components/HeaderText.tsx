@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { StyleSheet, Text } from "react-native";
+import { Colors } from '../constants/colors/Colors';
 
 interface ClickButtonTextProps {
     value: string;
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         alignContent: 'center',
         fontSize: 13,
-        color: '#ffffff',
+        color: Colors.textColor,
         padding: 10,
     },  
 });
