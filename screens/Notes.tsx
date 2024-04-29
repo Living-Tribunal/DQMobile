@@ -39,8 +39,7 @@ export default function Inventory({ navigation }) {
             <StatusBar hidden />
             <ScrollView style={styles.scrollView}>
                 <ImageBackground imageStyle={{ opacity: 0.2, resizeMode: 'repeat', }} source={require("../assets/images/texture.jpg")}>
-
-                    <View>
+                    {/* <View>
                         <View style={styles.menuContainer}>
                             <View style={styles.menuItem}>
                                 <PressableInventoryAction value="Inventory" onPress={() => navigation.navigate("Inventory")} />
@@ -60,7 +59,7 @@ export default function Inventory({ navigation }) {
                                 <PressableInventoryAction value="Home" onPress={() => navigation.navigate("Home")} />
                             </View>
                         </View>
-                    </View>
+                    </View> */}
                     <View>
                     <ClickButtonText value={'Where did you leave off?'} />
                     <PressableButtonText statKey={'Section'} value={'Section #'} />

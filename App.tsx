@@ -83,7 +83,7 @@ function MyStack() {
                     fontFamily: 'monospace',
                     justifyContent: 'center'
                   },}} 
-        >
+        >   
             <Stack.Screen name="Inventory" component={Inventory} />
             <Stack.Screen name="Special Abilities" component={SpecialAbilities} />
             <Stack.Screen name="Home" component={Home} />

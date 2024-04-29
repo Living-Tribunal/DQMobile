@@ -53,7 +53,7 @@ export default function QuestHardest({ value, statKey}: QuestHardestProps) {
                 style={({ pressed }) => [
                     styles.button,
                     {
-                        backgroundColor: pressed ? Colors.backgroundGold : Colors.deleteRed,
+                        backgroundColor: pressed ? Colors.backgroundGold : Colors.hardest,
                     },
                 ]}
                 onPress={() => handleButtonPress()}
