@@ -9,7 +9,7 @@
 
 
 
-**Project Description: This is a character sheet app for the Destiny Quest adventure book Legion of Shadows. Here you can keep track of all of your hero's stats and inventory. As well as access maps and a combat tracker. **
+**Project Description: This is a character sheet app for the Destiny Quest adventure book Legion of Shadows. Here you can keep track of all of your hero's stats and inventory. As well as access maps and a combat tracker.**
 
 
 
