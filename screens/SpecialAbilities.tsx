@@ -10,7 +10,6 @@ import {
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import ButtonText from "../components/ButtonText";
-import PressableInventoryAction from "../components/PressableInventoryAction";
 import Passive from "../constants/passive/Passive";
 import PressableButtonInventory from "../components/PressableButtonInventory";
 import { Colors } from '../constants/colors/Colors';

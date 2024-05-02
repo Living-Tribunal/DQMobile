@@ -141,6 +141,8 @@ export default function Maps({ navigation }) {
               <QuestEasy statKey="22" value="22" />
               <QuestAverage statKey="4" value="4" />
               <QuestAverage statKey="66" value="66" />
+            </View>
+            <View style={styles.comp}>
               <QuestHard statKey="25" value="25" />
               <QuestHard statKey="111" value="111" />
               <QuestHardest statKey="87" value="87" />
@@ -166,6 +168,8 @@ export default function Maps({ navigation }) {
               <QuestHard statKey="315" value="315" />
               <QuestHardest statKey="345" value="345" />
               <QuestBoss statKey="419" value="419" />
+            </View>
+            <View style={styles.comp}>
               <QuestLegendary statKey="313" value="313" />
               <QuestLegendary statKey="335" value="335" />
               <QuestLegendary statKey="350" value="350" />
@@ -188,6 +192,8 @@ export default function Maps({ navigation }) {
               <QuestAverage statKey="864" value="864" />
               <QuestHard statKey="618" value="618" />
               <QuestHardest statKey="613" value="613" />
+            </View>
+            <View style={styles.comp}>
               <QuestBoss statKey="635" value="635" />
               <QuestLegendary statKey="557" value="557" />
               <QuestLegendary statKey="564" value="564" />

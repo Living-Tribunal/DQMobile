@@ -1,3 +1,7 @@
+//I did not write this. I just found it on geeks for geeks and edited it to work in my program. 
+
+
+
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import AsyncStorage from "@react-native-async-storage/async-storage";
