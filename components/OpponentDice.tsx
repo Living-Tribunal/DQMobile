@@ -1,4 +1,4 @@
-//I did not write this. I just found it on geeks for geeks and edited it to work in my program. 
+//Same as the other. I did not write this. I just found it on geeks for geeks and edited it to work in my program. 
 
 
 
