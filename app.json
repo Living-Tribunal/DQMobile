@@ -3,7 +3,7 @@
     "name": "Destiny Quest Mobile",
     "slug": "destiny-quest-mobile",
     "version": "1.0.0",
-    "orientation": "portrait, landscape",
+    "orientation": "default",
     "icon": "./assets/images/logo.png",
     "userInterfaceStyle": "dark",
     "splash": {
