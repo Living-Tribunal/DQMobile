@@ -15,7 +15,6 @@ interface OppSpeedState {
     initialOppSpeed: number | null;
 }
   
-
 class OppSpeed extends React.Component<{}, OppSpeedState> {
     constructor(props: {}) {
       super(props);
